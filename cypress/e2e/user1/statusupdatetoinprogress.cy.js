@@ -1,0 +1,20 @@
+describe ('test' ,() => {
+    it('status new to inprogress' , () => {
+        cy.visit('http://localhost:3100/')
+        cy.get('.login').click()
+        cy.get('#username').click()
+        cy.get('#username').type('admin')
+        cy.get('#password').click()
+        cy.get('#password').type('Redmine@123')
+        cy.get('#login-submit').click()
+        cy.get(':nth-child(3) > .projects').click()
+        cy.get('.issues').click()
+        cy.get('#issue-20 > .subject > a').click()
+        cy.get('#content > :nth-child(1) > .icon-edit').click()
+        cy.get('#issue_status_id').select('Inprogress')
+        cy.get('#issue_notes').click()
+        cy.get('#issue_notes').type('Successful')
+        cy.get('#issue-form > [type="submit"]').click()
+        
+    })
+})

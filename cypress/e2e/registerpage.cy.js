@@ -1,0 +1,25 @@
+describe('test',() => {
+    it('Login test',() =>{
+            cy.visit('http://localhost:3100/')
+            cy.get('.register').click()
+            cy.get('#user_login').click()
+            cy.get('#user_login').type('yogesh_01@fosteringlinux.com')
+            cy.get('#user_password').click()
+            cy.get('#user_password').type('Yogesh@123')
+            cy.get('#user_password_confirmation').click()
+            cy.get('#user_password_confirmation').type('Yogesh@123')
+            cy.get('#user_firstname').click()
+            cy.get('#user_firstname').type('Yogesh')
+            cy.get('#user_lastname').click()
+            cy.get('#user_lastname').type('Panchal')
+            cy.get('#user_mail').click()
+            cy.get('#user_mail').type('yogesh_01@fosteringlinux.com')
+            cy.get('#pref_hide_mail').click()
+            cy.get('#pref_hide_mail').click()
+            // cy.get('#user_language').select('English(British)')
+            // cy.get('#user_language').click('English(British)')
+            cy.get('[type="submit"]').click()
+                    
+        })
+
+})
